@@ -12,6 +12,14 @@ Dependencies
 ------------
 
 Python must be installed.
+- name: Install Dependencies
+  yum:
+    state: present
+    name:
+    - "epel-release"
+    - "oracle-epel-release-el8"
+    - "python3"
+    - "python3-devel"
 
 Example Playbook
 ----------------
@@ -31,4 +39,3 @@ Author Information
 ------------------
 
 KG
-# ansible-roles-mysql-OL

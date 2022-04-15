@@ -22,3 +22,16 @@
     name: firewalld
     state: started
     enabled: yes
+
+- name: Create mysql DB
+  mysql_db:
+    name: employee_db
+    state: present
+
+- name: Create DB user
+  mysql_user:
+    name: db_user
+    password: Passw0rd
+    priv: '*.*:ALL'
+    state: present
+    host: '%'
