@@ -1,0 +1,24 @@
+- name: Install MySQL community repository
+  yum:
+     name: "http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm"
+     disable_gpg_check: yes
+     state: present
+
+- name: Install mysql
+  yum:
+    state: present
+    name:
+     - "mysql-server"
+     - "mysql-devel"
+
+- name: Start mysql
+  service:
+    name: mysqld
+    state: started
+    enabled: yes
+
+- name: Start mysql
+  service:
+    name: firewalld
+    state: started
+    enabled: yes
